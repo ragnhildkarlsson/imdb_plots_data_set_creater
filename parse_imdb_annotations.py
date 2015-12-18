@@ -10,6 +10,7 @@ def get_category_list(category_string):
     return re.split('\*',category_string)
 
 def title_string_to_file_name(title_string):
+    title_string.strip()
     title_string = title_string.replace("'", "")
     title_string = title_string.replace('"',"")
     title_string = title_string.replace('/',"")
@@ -18,7 +19,7 @@ def title_string_to_file_name(title_string):
     title_string = title_string.replace('(',"")
     title_string = title_string.replace(')',"")
     title_string = re.sub("\s+", '-', title_string)
-    title_string.strip()
+    title_string = title_string.lower()    
     return title_string
 
 
